@@ -1,12 +1,12 @@
 from scapy.all import *
 
 # Target IP address and port
-target_ip = "192.168.1.100"
-target_port = 80
+target_ip = ""
+target_port = 
 
 # Honeypot IP address and port
-honeypot_ip = "192.168.1.101"
-honeypot_port = 80
+honeypot_ip = ""
+honeypot_port = 
 
 # Function to handle incoming packets
 def handle_packet(packet):
