@@ -1,23 +1,25 @@
-# Honeypot with Scapy
+# 🛡️ TCP Honeypot with Live GeoIP Dashboard
 
-This is a simple honeypot script that uses the `scapy` library to mimic a vulnerable service and gather information about attackers.
+A **low-interaction honeypot** built with **Python and Scapy** that detects and logs TCP SYN attacks, performs **real-time GeoIP lookups**, and visualizes attacks in a **live Matplotlib dashboard**.
 
-## Description
+---
 
-The honeypot script sets up a honeypot on a specified IP address and port. When an attacker attempts to connect to the target port, the script sends a SYN/ACK packet to the attacker, indicating that the port is open. The script then logs the attacker's IP address, port, and the time of the attempt.
+## Features
 
-## Requirements
+- 🕵️‍♂️ **TCP SYN Detection**: Captures incoming connection attempts on specified ports.  
+- 🌍 **GeoIP Lookup**: Resolves attacker IPs to country and city in real-time with caching.  
+- 📊 **Live Dashboard**: Visualizes top attacker countries, attack frequency, and targeted ports.  
+- 💾 **CSV Logging**: All attacker details are stored for offline analysis.  
+- ⚡ **Multi-threaded**: Sniffer runs in background while dashboard updates live.  
+- 🔒 **Safe for testing**: Low-interaction honeypot; mimics services without running them.  
 
-- Python 3.x
-- Scapy library (`pip install scapy`)
+---
 
-## Usage
+## Installation
 
-1. Make sure you have Python and the Scapy library installed.
-2. Edit the `target_ip`, `target_port`, `honeypot_ip`, and `honeypot_port` variables in the script to match your setup.
-3. Run the script using the command `python honeypot.py`.
-4. The script will start sniffing packets on the target port and log the attacker's information when a SYN packet is received.
+Clone the repository and install dependencies:
 
-## Note
-
-This script is for educational purposes only and should not be used for malicious activities. Always obtain proper authorization before running any honeypot or security testing tools.
+```bash
+git clone https://github.com/username/honeypot-dashboard.git
+cd honeypot-dashboard
+pip install -r requirements.txt
